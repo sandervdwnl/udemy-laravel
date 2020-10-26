@@ -81,7 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Hello, {{ auth()->user()->name ?? '' }} <br> 
+                    with email {{ auth()->user()->email ?? '' }}
                 </div>
 
                 <div class="links">

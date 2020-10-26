@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- Custom title --}}
+    <title>@yield('page-title', 'My Title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -33,7 +34,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li><a href="/" class="nav-link {{ Request::is('/') ? 'active' : ''}}">Homepage</a></li>
+                        <li><a href="/info" class="nav-link {{ Request::is('info') ? 'active' : ''}}">Info</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
