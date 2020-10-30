@@ -36,6 +36,8 @@
                     <ul class="navbar-nav mr-auto">
                         <li><a href="/" class="nav-link {{ Request::is('/') ? 'active' : ''}}">Homepage</a></li>
                         <li><a href="/info" class="nav-link {{ Request::is('info') ? 'active' : ''}}">Info</a></li>
+                        {{-- Hobby * : alles wat start met 'hobby''wordt toegevoegd' --}}
+                        <li><a href="/hobby" class="nav-link {{ Request::is('hobby*') ? 'active' : ''}}">Hobby</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,6 +77,31 @@
         </nav>
 
         <main class="py-4">
+
+            @isset($message_success)
+            {{-- Success message --}}
+            <div class="container">
+                <div class="alert alert-success" role="alert">
+                    {!! $message_success !!}
+                </div>
+            </div>
+            @endisset
+
+            {{-- Optional red field with errors --}}
+            @if($errors->any())
+                <div class="container">
+                    {{-- BS Alert --}}
+                    <div class="alert alert-danger" role="alert">
+                        {{-- List of errors --}}
+                        <ul class="mb-0">
+                            @foreach($errors->all() as $error)
+                            <li>{!! $error !!}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
+
             @yield('content')
         </main>
     </div>

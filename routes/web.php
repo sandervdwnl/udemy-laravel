@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HobbyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,15 @@ Route::get('/', function () {
 Route::get('/info', function () {
     return view('info');
 });
+
+// // Directs URL /test to index-function in HobbyController
+// Route::get('/test', 'HobbyController@index');
+
+
+// Restfull Controller. Creert CRUD routes met names
+// Gebruik php artisan route:list resource HobbyController --name=hobby om deze te zien
+// URL: /hobby Syntax: resource::name, controller. 
+Route::resource('hobby', 'HobbyController');
 
 Auth::routes();
 
