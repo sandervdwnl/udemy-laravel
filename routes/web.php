@@ -31,6 +31,9 @@ Route::get('/info', function () {
 // URL: /hobby Syntax: resource::name, controller. 
 Route::resource('hobby', 'HobbyController');
 
+// Tags
+Route::resource('tag', 'TagController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

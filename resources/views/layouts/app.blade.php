@@ -39,7 +39,7 @@
                         {{-- Hobby * : alles wat start met 'hobby''wordt toegevoegd' --}}
                         <li><a href="/hobby" class="nav-link {{ Request::is('hobby*') ? 'active' : ''}}">Hobby</a></li>
                         {{-- Tags --}}
-                        <li><a href="/tags" class="nav-link {{ Request::is('tags*') ? 'active' : ''}}">Tags</a></li>
+                        <li><a href="/tag" class="nav-link {{ Request::is('tag*') ? 'active' : ''}}">Tag</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
