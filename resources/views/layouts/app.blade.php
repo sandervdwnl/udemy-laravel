@@ -38,6 +38,8 @@
                         <li><a href="/info" class="nav-link {{ Request::is('info') ? 'active' : ''}}">Info</a></li>
                         {{-- Hobby * : alles wat start met 'hobby''wordt toegevoegd' --}}
                         <li><a href="/hobby" class="nav-link {{ Request::is('hobby*') ? 'active' : ''}}">Hobby</a></li>
+                        {{-- Tags --}}
+                        <li><a href="/tags" class="nav-link {{ Request::is('tags*') ? 'active' : ''}}">Tags</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
