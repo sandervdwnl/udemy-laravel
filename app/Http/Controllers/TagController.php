@@ -45,9 +45,9 @@ class TagController extends Controller
         // Validation
         $request->validate([
             // Naam min 3 chars
-            'name'      => 'required|min:3',
+            'name'      => 'required',
             // Description min 5 chars
-            'style'      => 'required|min:5'
+            'style'      => 'required'
         ]);
 
         // Nieuwe instance van Hobby object, zie use app/Hobby
@@ -62,17 +62,6 @@ class TagController extends Controller
         return $this->index()->with([
             'message_success'    => "The tag <b>" . $tag->name . "</b> was added."
         ]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Tag $tag)
-    {
-        //
     }
 
     /**
@@ -101,9 +90,9 @@ class TagController extends Controller
         //Validation
         $request->validate([
             // Naam min 3 chars
-            'name'      => 'required|min:3',
+            'name'      => 'required',
             // Description min 5 chars
-            'style'      => 'required|min:5'
+            'style'      => 'required'
         ]);
 
         // Update records

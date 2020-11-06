@@ -15,12 +15,12 @@
 
                             <div class="form-group">
                                 <label for="Name">Name:</label>
-                                <input type="text" class="form-control {{ $errors->has('name') ? 'border-danger' : '' }}" name="name" id="name" value="{{ $hobby->name ?? old('name')}}">
+                                <input type="text" class="form-control {{ $errors->has('name') ? 'border-danger' : '' }}" name="name" id="name" value="{{ old('name') ?? $hobby->name }}">
                                 <small class="form-text text-danger">{!! $errors->first('name') !!}</small>
                             </div>
                             <div class="form-group">
                                 <label for="Description">Description:</label>
-                                <textarea class="form-control {{ $errors->has('description') ? 'border-danger' : '' }}" name="description" id="description" rows="10">{{ $hobby->description ?? old('description')}}</textarea>
+                                <textarea class="form-control {{ $errors->has('description') ? 'border-danger' : '' }}" name="description" id="description" rows="10">{{old('description') ?? $hobby->description }}</textarea>
                                 <small class="form-text text-danger">{!! $errors->first('description') !!}</small>
                             </div>
 
