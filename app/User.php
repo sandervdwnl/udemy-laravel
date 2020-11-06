@@ -10,6 +10,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    // Eloquent Relationship:
+    // 1 user heeft vele hobbies
+    public function hobbies()
+    {
+        //Deze class heeft meerdere instances
+        return $this->hasMany('App\Hobby');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

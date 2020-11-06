@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
+
+    // Eloquent Relationship:
+    // 1 tag behoort tot meerdere hobbies
+    public function hobbies()
+    {
+        return $this->belongsToMany('App\Hobby');
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *
