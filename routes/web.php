@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HobbyController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/info', function () {
     return view('info');
 });
 
+Route::resource('user', 'UserController');
+
 // // Directs URL /test to index-function in HobbyController
 // Route::get('/test', 'HobbyController@index');
 
@@ -37,3 +40,6 @@ Route::resource('tag', 'TagController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Link naar getFilteredHobbies-functie ex hobbyTagController
+Route::get('/hobby/tag/{tag_id}', 'hobbyTagController@getFilteredHobbies')->name('hobby_tag');

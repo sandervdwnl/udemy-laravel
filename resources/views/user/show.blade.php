@@ -5,14 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Hobby Details:</div>
+                <div class="card-header">{{ $user->name }}</div>
                     <div class="card-body">
-                        <b>{{ $hobby->name }}</b>
-                        <p>{{ $hobby->description }}</p>
+                        <b>{{ $user->name }}</b>
+                        <p>{{ $user->motto }}</p>
+                        <p>{{ $user->about_me }}</p>
                         <p>
-                        @foreach ($hobby->tags as $tag)
+                        {{-- @foreach ($hobby->tags as $tag)
                             <a href=""><span class="badge badge-{{ $tag->style }}">{{ $tag->name }}</span></a>
-                        @endforeach
+                        @endforeach --}}
                         </p>
                     </div>
             </div>

@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class HobbyController extends Controller
 {
+
+    // Constructor
+    public function __construct()
+    {
+        // Beprekt toegang voor uitgelogde users tot index en show methods
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +24,11 @@ class HobbyController extends Controller
     public function index()
     {
         //Haalt alle data uit table en geeft aan var
-        $hobbies = Hobby::all();
+        // $hobbies = Hobby::all();
+
+        // Slaat alles uit tabel op in var incl pagination en sorteer op created_at datum
+        $hobbies = Hobby::orderBy('created_at', 'DESC')->paginate(10);
+        // 10 results per page
 
         // Returns view index.blade.php ex map Hobby en geeft $hobbies array mee
         return view('hobby.index')->with([
@@ -53,7 +66,8 @@ class HobbyController extends Controller
         // Nieuwe instance van Hobby object, zie use app/Hobby
         $hobby = new Hobby([
             'name'          => $request->name,
-            'description'   => $request->description
+            'description'   => $request->description,
+            'user_id' => auth()->id()
         ]);
         // Sla op
         $hobby->save();

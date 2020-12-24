@@ -18,10 +18,13 @@ class TagSeeder extends Seeder
         // van te vooren vastgesteld.
         $tags = [
             'Sports'        => 'primary', //Primary is Blauw in BS
-            'Relaxation'    => 'secondary', // Grijs
+            'Relaxation'    => 'secondary', // Antraciet
             'Social'        => 'success', // Groen
             'Work'          => 'danger', // Rood
-            'Family'        => 'info' // Azure
+            'Study'         => 'warning', //Geel
+            'Family'        => 'info', // Azure
+            'Gaming'        => 'light', //Grijs
+            'Travel'        => 'dark' //Zwart
         ];
 
         // Loop door tags om in te voeren in tags tabel
