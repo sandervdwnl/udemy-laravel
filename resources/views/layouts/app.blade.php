@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a href="/" class="nav-link {{ Request::is('/') ? 'active' : ''}}">Homepage</a></li>
+                        <li><a href="/home" class="nav-link {{ Request::is('/') ? 'active' : ''}}">Homepage</a></li>
                         <li><a href="/info" class="nav-link {{ Request::is('info') ? 'active' : ''}}">Info</a></li>
                         {{-- Hobby * : alles wat start met 'hobby''wordt toegevoegd' --}}
                         <li><a href="/hobby" class="nav-link {{ Request::is('hobby*') ? 'active' : ''}}">Hobby</a></li>

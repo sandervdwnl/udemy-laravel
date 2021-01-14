@@ -8,7 +8,7 @@
                 <div class="card-header">Hobbies:</div>
                     <div class="card-body">
                             
-                        <form action="/hobby" method="POST">
+                        <form action="/hobby" method="POST" enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             <div class="form-group">
                                 <label for="Name">Name:</label>
@@ -19,6 +19,11 @@
                                 <label for="Description">Description:</label>
                                 <textarea class="form-control {{ $errors->has('description') ? 'border-danger' : '' }}" name="description" id="description" rows="10">{{old('description')}}</textarea>
                                 <small class="form-text text-danger">{!! $errors->first('description') !!}</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="Image">Image:</label>
+                                <input type="file" class="form-control {{ $errors->has('image') ? 'border-danger' : '' }}" name="image" id="image" value="{{old('image')}}">
+                                <small class="form-text text-danger">{!! $errors->first('image') !!}</small>
                             </div>
 
                             <input class="btn btn-primary float-left" type="submit" value="Save Hobby">
